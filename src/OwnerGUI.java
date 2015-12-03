@@ -21,6 +21,10 @@ public class OwnerGUI extends JFrame {
 	private JTextField userField;
 	private JTextField locationField;
 	private JButton btnNewButton_1;
+	private JTextField dogFeild;
+	private JTextField breedFeild;
+	private JTextField emailFeild;
+	private JLabel lblEmail;
 	
 	
 	/**
@@ -76,21 +80,21 @@ public class OwnerGUI extends JFrame {
 		contentPane.add(lblOwnergui);
 		
 		userField = new JTextField();
-		userField.setBounds(222, 79, 195, 19);
+		userField.setBounds(222, 25, 195, 19);
 		contentPane.add(userField);
 		userField.setColumns(10);
 		
 		locationField = new JTextField();
-		locationField.setBounds(222, 133, 195, 19);
+		locationField.setBounds(222, 56, 195, 19);
 		contentPane.add(locationField);
 		locationField.setColumns(10);
 		
 		JLabel lblUserName = new JLabel("User Name");
-		lblUserName.setBounds(104, 81, 100, 15);
+		lblUserName.setBounds(136, 25, 100, 15);
 		contentPane.add(lblUserName);
 		
 		JLabel lblDogName = new JLabel("Location");
-		lblDogName.setBounds(111, 135, 107, 15);
+		lblDogName.setBounds(146, 56, 107, 15);
 		contentPane.add(lblDogName);
 		
 		btnNewButton_1 = new JButton("Message");
@@ -103,6 +107,33 @@ public class OwnerGUI extends JFrame {
 		});
 		btnNewButton_1.setBounds(135, 217, 117, 25);
 		contentPane.add(btnNewButton_1);
+		
+		dogFeild = new JTextField();
+		dogFeild.setBounds(222, 87, 195, 19);
+		contentPane.add(dogFeild);
+		dogFeild.setColumns(10);
+		
+		JLabel lblDog = new JLabel("Dog");
+		lblDog.setBounds(156, 89, 70, 15);
+		contentPane.add(lblDog);
+		
+		breedFeild = new JTextField();
+		breedFeild.setBounds(222, 118, 195, 19);
+		contentPane.add(breedFeild);
+		breedFeild.setColumns(10);
+		
+		JLabel lblBreed = new JLabel("Breed");
+		lblBreed.setBounds(156, 118, 70, 15);
+		contentPane.add(lblBreed);
+		
+		emailFeild = new JTextField();
+		emailFeild.setBounds(222, 149, 195, 19);
+		contentPane.add(emailFeild);
+		emailFeild.setColumns(10);
+		
+		lblEmail = new JLabel("Email");
+		lblEmail.setBounds(156, 151, 70, 15);
+		contentPane.add(lblEmail);
 		
 	}
 
@@ -133,5 +164,13 @@ public class OwnerGUI extends JFrame {
 	public void testOwner()
 	{
 		System.out.println(curr);
+	}
+	public void setFeilds()
+	{
+		userField.setText(curr.getUsername());
+		locationField.setText(curr.getLocation());
+		dogFeild.setText(curr.getDogName());
+		breedFeild.setText(curr.getBreed());
+		emailFeild.setText(curr.getEmail());
 	}
 }

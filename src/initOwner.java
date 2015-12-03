@@ -12,6 +12,12 @@ public class initOwner {
 	private String pass;
 	AddOwner owner = new AddOwner();
 	
+	public initOwner(String user, String pass)
+	{
+		this.user=user;
+		this.pass=pass;
+	}
+	
 	public AddOwner startOwner(String user, String pass)
 	{
 		try {

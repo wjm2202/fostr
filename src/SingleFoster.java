@@ -140,6 +140,7 @@ public class SingleFoster extends JFrame {
 		emailFeild.setBounds(145, 157, 276, 19);
 		contentPane.add(emailFeild);
 		emailFeild.setColumns(10);
+		
 	}
 
 	public int getRow() {

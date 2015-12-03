@@ -45,6 +45,7 @@ public class SingleOwner extends JFrame {
 		});
 	}
 
+	
 	/**
 	 * Create the frame.
 	 */
@@ -171,6 +172,7 @@ public class SingleOwner extends JFrame {
 		});
 		btnExit.setBounds(35, 226, 117, 25);
 		contentPane.add(btnExit);
+		
 	}
 
 	public int getRow() {

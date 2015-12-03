@@ -86,12 +86,14 @@ public class startGUI {
 					{
 						frame.dispose();
 						OwnerGUI ownerGui = new OwnerGUI();
-						initOwner owner = new initOwner();
+						initOwner owner = new initOwner(user, pass);
 						dogOwner = owner.startOwner(user, pass);
 						ownerGui.setCurr(dogOwner);
-						ownerGui.setVisible(true);
+						ownerGui.setUser(user);
 						curr = dogOwner;
-						//ownerGui.testOwner();                            //testing
+						ownerGui.setFeilds();  
+						ownerGui.setVisible(true);//testing
+						
 					}
 					else
 					{
@@ -111,11 +113,12 @@ public class startGUI {
 						frame.dispose();
 						FosterGUI fosterGui = new FosterGUI();
 						initfoster foster = new initfoster(user, pass);
-						fosterer = foster.startOwner();
+						fosterer = foster.startOwner(user, pass);
 						fosterGui.setCurr(fosterer);
-						fosterGui.setVisible(true);
 						fosterGui.setUser(user);
 						curr = fosterer;
+						fosterGui.setFeilds();
+						fosterGui.setVisible(true);
 					}
 					else
 					{

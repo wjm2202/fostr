@@ -18,7 +18,9 @@ public class initfoster {
 		this.pass=pass;
 	}
 	
-	public AddOwner startOwner()
+	
+	
+	public AddOwner startOwner(String user, String pass)
 	{
 		try {
 			String query = "select * from Fostr where username =? and password=?";
@@ -40,7 +42,7 @@ public class initfoster {
 			rs.close();
 			pst.close();
 		} catch (Exception e) {
-			System.out.println("create owner in initOwner failed");
+			System.out.println("create foster in init foster failed");
 		}
 		return owner;
 	}
