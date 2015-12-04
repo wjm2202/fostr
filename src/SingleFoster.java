@@ -96,6 +96,7 @@ public class SingleFoster extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				OwnerGUI owner = new OwnerGUI();
 				owner.setVisible(true);
+				owner.setFeilds();
 				dispose();
 			}
 		});
@@ -121,6 +122,7 @@ public class SingleFoster extends JFrame {
 						locationFeild.setText(rs.getString("location"));
 						
 					}
+					rs.close();
 					pst.close();
 				}catch (Exception e2)
 				{

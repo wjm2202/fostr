@@ -26,6 +26,8 @@ public class NewMessage extends JFrame {
 	private JTextField touserFeild;
 	Connection conn = null;
 	private JTextField msgFeild;
+	private String user;
+	private Message msgObject;
 
 	/**
 	 * Launch the application.
@@ -76,20 +78,21 @@ public class NewMessage extends JFrame {
 					PreparedStatement pst = conn.prepareStatement(query);
 					pst.setString(1, touserFeild.getText());
 					pst.setString(2,  msgFeild.getText());
-					//pst.setDate(3,  (java.sql.Date)ft.format(dNow));
 					
 					pst.execute();
 					
 					System.out.println("post message success");
 					
 					pst.close();
-					dispose();
+					
 				}
 				catch (Exception e7)
 				{
 					System.out.println("post message fail");
 					JOptionPane.showMessageDialog(null, "Message Failed to post");
 				}
+				//msgObject.refreshTable();
+				dispose();
 			}
 		});
 		btnSubmit.setBounds(307, 224, 117, 25);
@@ -98,6 +101,8 @@ public class NewMessage extends JFrame {
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Message ms = new Message();
+				ms.setVisible(true);
 				dispose();
 			}
 		});
@@ -108,6 +113,22 @@ public class NewMessage extends JFrame {
 		msgFeild.setBounds(52, 41, 371, 171);
 		contentPane.add(msgFeild);
 		msgFeild.setColumns(10);
+	}
+
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	public Message getMsgObject() {
+		return msgObject;
+	}
+
+	public void setMsgObject(Message msgObject) {
+		this.msgObject = msgObject;
 	}
 
 }

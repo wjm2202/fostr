@@ -151,6 +151,7 @@ public class SingleOwner extends JFrame {
 
 					}
 					pst.close();
+					rs.close();
 				}catch (Exception e2)
 				{
 					System.out.println("single owner textfeild error");
@@ -168,6 +169,7 @@ public class SingleOwner extends JFrame {
 				dispose();
 				FosterGUI fost = new FosterGUI();
 				fost.setVisible(true);
+				fost.setFeilds();
 			}
 		});
 		btnExit.setBounds(35, 226, 117, 25);

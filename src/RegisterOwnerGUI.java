@@ -207,7 +207,7 @@ public class RegisterOwnerGUI extends JFrame {
 					ownerGui.setPass(userFeild.getText());
 					ownerGui.setVisible(true);
 					
-					
+					pst.close();
 
 				} catch (Exception e2) {
 					System.out.println("database or customer object error in RegisterOwner");

@@ -52,6 +52,9 @@ public class ResultsOwner extends JFrame {
 			ResultSet rs = pst.executeQuery();
 			table.setModel(DbUtils.resultSetToTableModel(rs));
 			
+			pst.close();
+			rs.close();
+			
 		} catch (Exception e2) {
 			// TODO: handle exception
 		}
@@ -77,6 +80,9 @@ public class ResultsOwner extends JFrame {
 					PreparedStatement pst = conn.prepareStatement(query);
 					ResultSet rs = pst.executeQuery();
 					table.setModel(DbUtils.resultSetToTableModel(rs));
+					
+					pst.close();
+					rs.close();
 					
 				} catch (Exception e2) {
 					// TODO: handle exception

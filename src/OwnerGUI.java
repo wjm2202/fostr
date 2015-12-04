@@ -101,8 +101,9 @@ public class OwnerGUI extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Message msg = new Message();
-				msg.setVisible(true);
+				Message msgObject = new Message();
+				msgObject.setVisible(true);
+				msgObject.setMsgObject(msgObject);
 			}
 		});
 		btnNewButton_1.setBounds(135, 217, 117, 25);

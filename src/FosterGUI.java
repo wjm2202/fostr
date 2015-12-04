@@ -100,9 +100,9 @@ public class FosterGUI extends JFrame {
 		btnMessages.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Message msg = new Message();
-				msg.setVisible(true);
-				
+				Message msgObject = new Message();
+				msgObject.setVisible(true);
+				msgObject.setMsgObject(msgObject);
 			}
 		});
 		btnMessages.setBounds(134, 211, 117, 25);

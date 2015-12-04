@@ -24,6 +24,7 @@ public class Message extends JFrame {
 	Connection conn = null;
 	private JPanel contentPane;
 	private JTable table;
+	private Message msgObject;
 
 	/**
 	 * Launch the application.
@@ -50,6 +51,9 @@ public class Message extends JFrame {
 			PreparedStatement pst=conn.prepareStatement(query);
 			ResultSet rs = pst.executeQuery();
 			table.setModel(DbUtils.resultSetToTableModel(rs));
+			
+			pst.close();
+			rs.close();
 			
 		} 
 		catch (Exception e5) 
@@ -93,6 +97,8 @@ public class Message extends JFrame {
 					PreparedStatement pst=conn.prepareStatement(query);
 					ResultSet rs = pst.executeQuery();
 					table.setModel(DbUtils.resultSetToTableModel(rs));
+					pst.close();
+					rs.close();
 					
 				} 
 				catch (Exception e5) 
@@ -110,6 +116,8 @@ public class Message extends JFrame {
 				
 				NewMessage nmsg = new NewMessage();
 				nmsg.setVisible(true);
+				nmsg.setMsgObject(msgObject);
+				
 			}
 		});
 		btnNewMessage.setBounds(294, 430, 160, 25);
@@ -123,11 +131,29 @@ public class Message extends JFrame {
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//message to picked user
+
+				int row = table.getSelectedRow();
+				String rowid=(table.getModel().getValueAt(row, 0)).toString();
+				String msg = (table.getModel().getValueAt(row, 1)).toString();
 				
+				ShowSelectedMessage sm = new ShowSelectedMessage();
+				sm.setRow(row);
+				sm.setUsername(rowid);
+				sm.setMsg(msg);
+				sm.setFeilds();
+				sm.setVisible(true);
+				//dispose();
 			}
 		});
 		scrollPane.setViewportView(table);
 		refreshTable();
+	}
+
+	public Message getMsgObject() {
+		return msgObject;
+	}
+
+	public void setMsgObject(Message msgObject) {
+		this.msgObject = msgObject;
 	}
 }

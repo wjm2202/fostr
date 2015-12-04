@@ -172,6 +172,7 @@ public class RegisterFoster extends JFrame {
 					fosterGui.setUser(userFeild.getText());
 					fosterGui.setPass(passFeild.getText());
 					fosterGui.setVisible(true);
+					pst.close();
 
 				} catch (Exception e2) {
 					// TODO: handle exception
